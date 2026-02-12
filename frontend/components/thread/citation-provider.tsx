@@ -1,3 +1,5 @@
+'use client';
+
 import { Source } from '@/lib/types';
 import { createContext, PropsWithChildren, useEffect, useState } from 'react';
 

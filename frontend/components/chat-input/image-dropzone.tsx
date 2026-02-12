@@ -1,3 +1,5 @@
+'use client';
+
 import { Flex } from '@/components/ui';
 import { IconPhotoPlus } from '@tabler/icons-react';
 import { FC } from 'react';

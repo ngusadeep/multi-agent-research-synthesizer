@@ -1,3 +1,5 @@
+'use client';
+
 import { ChatMode, ChatModeConfig } from '@/lib/config';
 import { ThreadItem } from '@/lib/types';
 import { buildCoreMessagesFromThreadItems, plausible } from '@/lib/helpers';

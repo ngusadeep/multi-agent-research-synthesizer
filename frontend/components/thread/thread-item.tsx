@@ -1,3 +1,5 @@
+'use client';
+
 import { CitationProvider } from './citation-provider';
 import { MotionSkeleton } from '../motion-skeleton';
 import {

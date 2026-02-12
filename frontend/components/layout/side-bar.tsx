@@ -1,3 +1,5 @@
+'use client';
+
 import { FullPageLoader } from '../full-page-loader';
 import { HistoryItem } from '../history/history-item';
 import { useRootContext } from '@/context';

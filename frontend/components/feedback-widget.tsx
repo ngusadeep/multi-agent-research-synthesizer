@@ -1,3 +1,5 @@
+'use client';
+
 import { Button, Textarea } from '@/components/ui';
 import { IconCircleCheckFilled, IconHelpSmall, IconX } from '@tabler/icons-react';
 import { AnimatePresence, motion } from 'framer-motion';

@@ -1,3 +1,5 @@
+'use client';
+
 import { ErrorBoundary } from '../../error-boundary';
 import { ErrorPlaceholder } from '../../error-placeholder';
 import { mdxComponents } from '../../mdx/mdx-components';

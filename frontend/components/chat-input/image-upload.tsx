@@ -1,3 +1,5 @@
+'use client';
+
 import { useChatStore } from '@/store';
 import { ChatModeConfig } from '@/lib/config';
 import { Button, Tooltip } from '@/components/ui';

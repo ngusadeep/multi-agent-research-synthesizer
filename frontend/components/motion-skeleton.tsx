@@ -1,3 +1,5 @@
+'use client';
+
 import { cn } from '@/components/ui';
 
 import { Skeleton } from '@/components/ui';

@@ -1,3 +1,5 @@
+'use client';
+
 import { ChatEditor } from '../../chat-input/chat-editor';
 import { markdownStyles } from './markdown-content';
 import { useAgentStream, useChatEditor, useCopyText } from '@/hooks';

@@ -1,3 +1,5 @@
+'use client';
+
 import { useChatStore } from '@/store';
 import { useToast } from '@/components/ui';
 import { ChangeEvent, useCallback } from 'react';

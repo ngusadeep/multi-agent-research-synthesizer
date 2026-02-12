@@ -1,3 +1,7 @@
+'use client';
+
+'use client';
+
 import { LinkFavicon } from '../../link-favicon';
 import { SourceList } from './source-list';
 import { useAppStore } from '@/store';

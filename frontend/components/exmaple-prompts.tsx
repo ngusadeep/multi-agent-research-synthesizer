@@ -1,3 +1,5 @@
+'use client';
+
 import { useChatStore } from '@/store';
 import { Button } from '@/components/ui';
 import {
@@ -52,14 +54,12 @@ export const getRandomPrompt = (category?: keyof typeof examplePrompts) => {
         return prompts[Math.floor(Math.random() * prompts.length)];
     }
 
-    // If no category specified or invalid category, return a random prompt from any category
     const categories = Object.keys(examplePrompts) as Array<keyof typeof examplePrompts>;
     const randomCategory = categories[Math.floor(Math.random() * categories.length)];
     const prompts = examplePrompts[randomCategory];
     return prompts[Math.floor(Math.random() * prompts.length)];
 };
 
-// Map of category to icon component
 const categoryIcons = {
     howTo: { name: 'How to', icon: IconQuestionMark, color: '!text-yellow-700' },
     explainConcepts: { name: 'Explain Concepts', icon: IconBulb, color: '!text-blue-700' },
@@ -71,7 +71,6 @@ const categoryIcons = {
 export const ExamplePrompts = () => {
     const editor: Editor | undefined = useChatStore(state => state.editor);
     const handleCategoryClick = (category: keyof typeof examplePrompts) => {
-        console.log('editor', editor);
         if (!editor) return;
         const randomPrompt = getRandomPrompt(category);
         editor.commands.clearContent();

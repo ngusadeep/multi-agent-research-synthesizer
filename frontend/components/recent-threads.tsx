@@ -1,3 +1,5 @@
+'use client';
+
 import { useRootContext } from '@/context';
 import { useChatStore } from '@/store';
 import { Button } from '@/components/ui';

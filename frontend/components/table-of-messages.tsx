@@ -1,3 +1,5 @@
+'use client';
+
 import { useChatStore } from '@/store';
 import { Button, cn, Popover, PopoverContent, PopoverTrigger } from '@/components/ui';
 import { AnimatePresence, motion } from 'framer-motion';

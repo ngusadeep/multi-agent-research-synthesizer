@@ -1,3 +1,5 @@
+'use client';
+
 import { ItemStatus } from '@/lib/types';
 import { motion } from 'framer-motion';
 

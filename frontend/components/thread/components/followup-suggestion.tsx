@@ -1,3 +1,5 @@
+'use client';
+
 import { useChatStore } from '@/store';
 import { Button } from '@/components/ui';
 import { IconHelpHexagon } from '@tabler/icons-react';

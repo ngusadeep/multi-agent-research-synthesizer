@@ -1,7 +1,4 @@
-'use client';
-
-import { ChatInput } from '@/components/chat-input';
-
+import { ChatInput } from '@/components/chat-input/input';
 export default function ChatPageLayout({
     children,
     params,

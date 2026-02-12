@@ -1,3 +1,5 @@
+'use client';
+
 import { ThreadItem } from './thread-item';
 import { useChatStore } from '@/store';
 import { useParams } from 'next/navigation';

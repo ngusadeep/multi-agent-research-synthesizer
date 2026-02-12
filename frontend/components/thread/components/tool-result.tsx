@@ -1,3 +1,7 @@
+'use client';
+
+'use client';
+
 import { CodeBlock } from '../../code-block/code-block';
 import { ToolResultIcon } from '../../icons';
 import { ToolResult as ToolResultType } from '@/lib/types';

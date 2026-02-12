@@ -1,3 +1,5 @@
+'use client';
+
 import { useChatStore } from '@/store';
 import { Thread } from '@/lib/types';
 import {

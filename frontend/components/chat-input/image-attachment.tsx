@@ -1,3 +1,5 @@
+'use client';
+
 import { useChatStore } from '@/store';
 import { Button, Flex } from '@/components/ui';
 import { X } from 'lucide-react';

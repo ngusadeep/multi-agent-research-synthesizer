@@ -1,3 +1,5 @@
+'use client';
+
 import { useAgentStream } from '@/hooks';
 import { useChatStore } from '@/store';
 import { ThreadItem } from '@/lib/types';

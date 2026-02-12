@@ -1,3 +1,7 @@
+'use client';
+
+'use client';
+
 import { CodeBlock } from '../../code-block/code-block';
 import { ToolIcon } from '../../icons';
 import { ToolCall as ToolCallType } from '@/lib/types';

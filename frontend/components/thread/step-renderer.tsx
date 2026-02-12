@@ -1,3 +1,5 @@
+'use client';
+
 import { SearchResultsList } from '../search-results';
 import { StepStatus } from './step-status';
 import { TextShimmer } from '../text-shimmer';

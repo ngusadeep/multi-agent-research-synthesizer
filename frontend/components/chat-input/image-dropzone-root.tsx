@@ -1,3 +1,5 @@
+'use client';
+
 import { FC } from 'react';
 import { DropzoneState } from 'react-dropzone';
 import { ImageDropzone } from './image-dropzone';

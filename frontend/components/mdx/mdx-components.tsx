@@ -1,3 +1,5 @@
+'use client';
+
 import { CitationProviderContext } from '../thread/citation-provider';
 import { CodeBlock } from '../code-block/code-block';
 import { LinkPreviewPopover } from '../link-preview';

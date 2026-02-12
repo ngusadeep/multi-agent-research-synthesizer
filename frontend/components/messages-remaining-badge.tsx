@@ -1,3 +1,5 @@
+'use client';
+
 import { useApiKeysStore, useAppStore, useChatStore } from '@/store';
 import { motion } from 'framer-motion';
 
