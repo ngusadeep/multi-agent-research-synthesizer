@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """Pydantic settings: config/config.yml (defaults) and .env (override)."""
 
 import os
@@ -44,11 +43,6 @@ def _load_yaml_config() -> dict:
     if langsmith.get("endpoint") is not None:
         flat["langsmith_endpoint"] = langsmith["endpoint"]
     return flat
-=======
-"""Pydantic settings loaded from .env."""
-
-from pydantic_settings import BaseSettings
->>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
 
 
 class Settings(BaseSettings):
@@ -57,11 +51,8 @@ class Settings(BaseSettings):
     tavily_api_key: str = ""
     serpapi_api_key: str = ""
     chroma_persist_directory: str = "./chroma_db"
-<<<<<<< HEAD
     chroma_http_host: str = ""
     chroma_http_port: int = 8000
-=======
->>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
     database_url: str = ""
     redis_url: str = ""
     max_iterations: int = 3
@@ -69,7 +60,6 @@ class Settings(BaseSettings):
     langsmith_tracing: bool = False
     langsmith_api_key: str = ""
     langsmith_project: str = "research-synthesis-agent"
-<<<<<<< HEAD
     langsmith_endpoint: str = "https://api.smith.langchain.com"
     langsmith_workspace_id: str = ""
 
@@ -87,17 +77,12 @@ class Settings(BaseSettings):
             return _strip_quotes(v) or ""
         return ""
 
-=======
-    langsmith_workspace_id: str = ""
-
->>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
     model_config = {
         "env_file": ".env",
         "env_file_encoding": "utf-8",
         "extra": "ignore",
     }
 
-<<<<<<< HEAD
     @classmethod
     def settings_customise_sources(
         cls,
@@ -111,7 +96,5 @@ class Settings(BaseSettings):
         yaml_source = InitSettingsSource(settings_cls, _load_yaml_config())
         return (env_settings, dotenv_settings, init_settings, yaml_source)
 
-=======
->>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
 
 settings = Settings()

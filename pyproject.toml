@@ -23,10 +23,7 @@ dependencies = [
     "langsmith>=0.2.0",
     "celery[redis]>=5.4.0",
     "redis>=5.0.0",
-<<<<<<< HEAD
     "pyyaml>=6.0.0",
-=======
->>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
 ]
 
 

@@ -5,7 +5,6 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-<<<<<<< HEAD
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 ENV UV_SYSTEM_PYTHON=1
@@ -15,10 +14,6 @@ RUN uv sync --frozen --no-dev --no-install-project
 
 COPY . .
 RUN uv sync --frozen --no-dev
-=======
-COPY . .
-RUN pip install --no-cache-dir -e .
->>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
 
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app

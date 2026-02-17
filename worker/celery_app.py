@@ -1,15 +1,11 @@
 """Celery app: broker and backend use Redis."""
 
-<<<<<<< HEAD
 import os
 
-=======
->>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
 from celery import Celery
 
 from config import settings
 
-<<<<<<< HEAD
 # Apply LangSmith tracing for Celery workers (must run before any LangChain/LangGraph code)
 if settings.langsmith_tracing and settings.langsmith_api_key:
     os.environ["LANGSMITH_TRACING"] = "true"
@@ -26,8 +22,6 @@ if settings.langsmith_tracing and settings.langsmith_api_key:
             settings.langsmith_workspace_id.strip().strip('"')
         )
 
-=======
->>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
 app = Celery(
     "research_synthesis_agent",
     broker=settings.redis_url or "redis://localhost:6379/0",

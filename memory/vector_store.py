@@ -45,21 +45,6 @@ class MemoryStore:
             self._reports.count(),
             self._credibility.count(),
         )
-<<<<<<< HEAD
-=======
-        self._reports = self._client.get_or_create_collection(
-            name="reports", metadata={"hnsw:space": "cosine"}
-        )
-        self._credibility = self._client.get_or_create_collection(
-            name="source_credibility", metadata={"hnsw:space": "cosine"}
-        )
-        logger.info(
-            "ChromaDB initialized at %s (reports: %s, credibility: %s)",
-            settings.chroma_persist_directory,
-            self._reports.count(),
-            self._credibility.count(),
-        )
->>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
 
     @property
     def reports(self) -> chromadb.Collection:
