@@ -30,6 +30,8 @@ def _load_yaml_config() -> dict:
     flat: dict = {}
     if app.get("openai_model") is not None:
         flat["openai_model"] = app["openai_model"]
+    if app.get("embedding_model") is not None:
+        flat["embedding_model"] = app["embedding_model"]
     if app.get("max_iterations") is not None:
         flat["max_iterations"] = app["max_iterations"]
     if server.get("cors_origins") is not None:
@@ -48,6 +50,7 @@ def _load_yaml_config() -> dict:
 class Settings(BaseSettings):
     openai_api_key: str = ""
     openai_model: str = "gpt-4o-mini"
+    embedding_model: str = "text-embedding-3-small"
     tavily_api_key: str = ""
     serpapi_api_key: str = ""
     chroma_persist_directory: str = "./chroma_db"

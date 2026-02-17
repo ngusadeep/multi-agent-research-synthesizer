@@ -21,8 +21,6 @@ from config import settings
 
 logger = logging.getLogger(__name__)
 
-EMBEDDING_MODEL = "text-embedding-3-small"
-
 
 class MemoryStore:
     def __init__(self) -> None:
@@ -33,7 +31,7 @@ class MemoryStore:
     def _embedding_function(self) -> OpenAIEmbeddingFunction:
         return OpenAIEmbeddingFunction(
             api_key=settings.openai_api_key,
-            model_name=EMBEDDING_MODEL,
+            model_name=settings.embedding_model,
         )
 
     def initialize(self) -> None:
