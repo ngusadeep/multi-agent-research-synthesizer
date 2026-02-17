@@ -10,4 +10,7 @@ frontend
 .pytest_cache
 .coverage
 htmlcov
+<<<<<<< HEAD
 node_modules
+=======
+>>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2

@@ -27,6 +27,7 @@ services:
       timeout: 3s
       retries: 5
 
+<<<<<<< HEAD
   chroma:
     image: chromadb/chroma:latest
     ports:
@@ -37,22 +38,33 @@ services:
       CHROMA_SERVER_AUTHN_CREDENTIALS: ""
       CHROMA_SERVER_AUTHN_PROVIDER: ""
 
+=======
+>>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
   api:
     build: .
     env_file: .env
     environment:
       REDIS_URL: redis://redis:6379/0
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432/research
+<<<<<<< HEAD
       CHROMA_HTTP_HOST: chroma
       CHROMA_HTTP_PORT: 8000
       # CONFIG_FILE=config/config.yml  # optional; included in image
+=======
+      CHROMA_PERSIST_DIRECTORY: /app/data/chroma_db
+    volumes:
+      - app_data:/app/data
+>>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
     depends_on:
       redis:
         condition: service_healthy
       postgres:
         condition: service_healthy
+<<<<<<< HEAD
       chroma:
         condition: service_started
+=======
+>>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
     command: uvicorn main:app --host 0.0.0.0 --port 8000
 
   celery_worker:
@@ -61,16 +73,25 @@ services:
     environment:
       REDIS_URL: redis://redis:6379/0
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432/research
+<<<<<<< HEAD
       CHROMA_HTTP_HOST: chroma
       CHROMA_HTTP_PORT: 8000
       # CONFIG_FILE=config/config.yml  # optional
+=======
+      CHROMA_PERSIST_DIRECTORY: /app/data/chroma_db
+    volumes:
+      - app_data:/app/data
+>>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
     depends_on:
       redis:
         condition: service_healthy
       postgres:
         condition: service_healthy
+<<<<<<< HEAD
       chroma:
         condition: service_started
+=======
+>>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
     command: celery -A worker.celery_app worker --loglevel=info --concurrency=4
 
   frontend:
@@ -95,4 +116,8 @@ services:
 volumes:
   redis_data: {}
   postgres_data: {}
+<<<<<<< HEAD
   chroma_data: {}
+=======
+  app_data: {}
+>>>>>>> ecbe72917deca88c3ca5578ff730ab30b5c776e2
