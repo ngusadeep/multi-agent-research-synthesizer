@@ -299,24 +299,12 @@ export const ApiKeySettings = () => {
     const setApiKey = useApiKeysStore(state => state.setKey);
     const [isEditing, setIsEditing] = useState<string | null>(null);
 
-    const apiKeyList = [
+    const apiKeyList: { name: string; key: keyof ApiKeys; value: string | undefined; url: string }[] = [
         {
             name: 'OpenAI',
-            key: 'OPENAI_API_KEY' as keyof ApiKeys,
+            key: 'OPENAI_API_KEY',
             value: apiKeys.OPENAI_API_KEY,
             url: 'https://platform.openai.com/api-keys',
-        },
-        {
-            name: 'Anthropic',
-            key: 'ANTHROPIC_API_KEY' as keyof ApiKeys,
-            value: apiKeys.ANTHROPIC_API_KEY,
-            url: 'https://console.anthropic.com/settings/keys',
-        },
-        {
-            name: 'Google Gemini',
-            key: 'GEMINI_API_KEY' as keyof ApiKeys,
-            value: apiKeys.GEMINI_API_KEY,
-            url: 'https://ai.google.dev/api',
         },
     ];
 
