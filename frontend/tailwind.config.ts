@@ -91,7 +91,7 @@ const config: Config = {
                 '2xl': ['1.275rem', { lineHeight: '2.25rem' }],
                 '3xl': ['1.375rem', { lineHeight: '2.5rem' }],
                 '4xl': ['1.475rem', { lineHeight: '2.75rem' }],
-                '5xl': ['3.052rem'],
+                '5xl': ['3.052rem', { lineHeight: '1.2' }],
             },
             fontWeight: {
                 normal: '350',
