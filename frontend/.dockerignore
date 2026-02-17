@@ -1,0 +1,16 @@
+# Dependencies - install in container from package.json + lock file only
+node_modules
+
+# Build output - produced inside container
+.next
+out
+build
+dist
+
+# Local / env
+.env
+.env.*
+.git
+*.md
+.pnp
+.pnp.js

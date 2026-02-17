@@ -1,4 +1,12 @@
-"""ChromaDB vector store: reports and source credibility."""
+"""ChromaDB vector store: reports and source credibility.
+
+Uses OpenAI text-embedding-3-small for both storing and querying:
+- Storing: report queries and source credibility (title + type) are embedded on upsert.
+- Querying: user query text is embedded for similarity search (find_similar_queries).
+
+If you had an existing chroma_db created with the default embedder, delete it
+(chroma_persist_directory) or use a new path so collections use this model.
+"""
 
 from __future__ import annotations
 
@@ -7,10 +15,13 @@ from datetime import datetime, timezone
 
 import chromadb
 from chromadb.config import Settings as ChromaSettings
+from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
 
 from config import settings
 
 logger = logging.getLogger(__name__)
+
+EMBEDDING_MODEL = "text-embedding-3-small"
 
 
 class MemoryStore:
@@ -18,6 +29,12 @@ class MemoryStore:
         self._client: chromadb.ClientAPI | None = None
         self._reports: chromadb.Collection | None = None
         self._credibility: chromadb.Collection | None = None
+
+    def _embedding_function(self) -> OpenAIEmbeddingFunction:
+        return OpenAIEmbeddingFunction(
+            api_key=settings.openai_api_key,
+            model_name=EMBEDDING_MODEL,
+        )
 
     def initialize(self) -> None:
         if settings.chroma_http_host:
@@ -33,11 +50,17 @@ class MemoryStore:
                 settings=ChromaSettings(anonymized_telemetry=False),
             )
             where = settings.chroma_persist_directory
+
+        ef = self._embedding_function()
         self._reports = self._client.get_or_create_collection(
-            name="reports", metadata={"hnsw:space": "cosine"}
+            name="reports",
+            metadata={"hnsw:space": "cosine"},
+            embedding_function=ef,
         )
         self._credibility = self._client.get_or_create_collection(
-            name="source_credibility", metadata={"hnsw:space": "cosine"}
+            name="source_credibility",
+            metadata={"hnsw:space": "cosine"},
+            embedding_function=ef,
         )
         logger.info(
             "ChromaDB initialized at %s (reports: %s, credibility: %s)",
